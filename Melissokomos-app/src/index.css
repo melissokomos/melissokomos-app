@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 53 100% 98%;
+    --foreground: 35 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 35 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 35 15% 20%;
+
+    --primary: 44 95% 63%;
+    --primary-foreground: 35 40% 20%;
+
+    --secondary: 87 54% 66%;
+    --secondary-foreground: 35 15% 20%;
+
+    --muted: 54 30% 94%;
+    --muted-foreground: 35 8% 45%;
+
+    --accent: 24 98% 81%;
+    --accent-foreground: 35 15% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 54 20% 88%;
+    --input: 54 20% 88%;
+    --ring: 44 95% 63%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 35 15% 10%;
+    --foreground: 54 20% 90%;
+
+    --card: 35 15% 15%;
+    --card-foreground: 54 20% 90%;
+
+    --popover: 35 15% 15%;
+    --popover-foreground: 54 20% 90%;
+
+    --primary: 44 95% 63%;
+    --primary-foreground: 35 15% 10%;
+
+    --secondary: 87 54% 46%;
+    --secondary-foreground: 54 20% 90%;
+
+    --muted: 35 15% 20%;
+    --muted-foreground: 35 8% 65%;
+
+    --accent: 24 88% 61%;
+    --accent-foreground: 54 20% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 54 20% 90%;
+
+    --border: 35 15% 25%;
+    --input: 35 15% 25%;
+    --ring: 44 95% 63%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Hexagon shape for honeycomb pattern */
+  .hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  
+  /* Glass card effect */
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-md border border-white/30 shadow-lg;
+  }
+  
+  .dark .glass-card {
+    @apply bg-black/30 border-white/10;
+  }
+}
